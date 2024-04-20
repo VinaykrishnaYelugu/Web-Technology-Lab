@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Student feedback-form </title>
+    <style>
+        body{
+            background-color : cyan;
+            color : blue;
+        }
+
+        h1{
+            text-align : center;
+        }
+
+        form{
+            margin-left : auto;
+            margin-right : auto;
+            text-align : center;
+            border : 1px solid black;
+            padding-top : 50px;
+            height : 500px;
+            background-color : pink;
+            color : maroon;
+            width : 50%;
+        }
+
+        .rad{
+            margin-bottom : 10px;
+        }
+
+        textarea{
+            margin-top : 5px;
+            margin-bottom : 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1> FEEDBACK FORM </h1>
+    <form action="action.php">
+        <input type="text" name="fname" placeholder="Enter your name" class="rad">
+        <br>
+        <input type="text" name="femail" placeholder="Enter your mail id" class="rad">
+        <br>
+        <input type="text" name="fusn" placeholder="Enter your USN" class="rad">
+        <br>
+
+        <label for="fsemester">Sem : </label>
+        <select name="fsemester" id="fsemester">
+            <option value="1" selected> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+            <option value="6"> 6 </option>
+            <option value="7"> 7 </option>
+            <option value="8"> 8 </option>
+        </select>
+        <br> <br>
+
+        Branch : <br>
+        <input type="radio" name="fbranch" class="rad" value="cs"> CS <br>
+        <input type="radio" name="fbranch" class="rad" value="is"> IS <br>
+        <input type="radio" name="fbranch" class="rad" value="ece"> ECE <br>
+
+        <input type="checkbox" name="fsend" checked>Send copy of feedback to mail <br> <br>
+        <textarea name="ffeedback" cols="30" rows="5" placeholder="Type Here"></textarea> <br>
+
+        <input type="submit" value="submitted">
+        <input type="reset" value="reset" >
+    </form>
+</body>
+</html>

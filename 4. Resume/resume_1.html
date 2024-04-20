@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Resume </title>
+    <style>
+          main{
+            height : 96vh;
+            width : 75vh;
+            border : 2px solid black;
+            margin : auto;
+            display : flex;
+          }
+
+          nav{
+            width : 30%;
+            height : 100%;
+            border : 0.5px solid black;
+          }
+
+          #details{
+            width : 70%;
+            height : 100%;
+            padding : 2vh;
+          }
+
+          #name_{
+            width : 100%;
+            height : 11%;
+          }
+
+          #name_>h1{
+             margin : 2vh;
+             text-align: center;
+          }
+
+          #name_>h6{
+            text-align : right;
+            margin : 2vh;
+          }
+
+          hr{
+            width : 100%;
+            text-align: center;
+          }
+
+          #content_ div{
+            font-size : 2vh;
+          }
+
+          .left_align{
+            width : 100%;
+            display : flex;
+            justify-content: space-between;
+            align-items: center;
+            margin : 0.3vh;
+            flex-wrap: wrap;
+        }
+
+        .horizontal_list{
+            width : 90%;
+            display : flex;
+            justify-content: left;
+            align-items: center;
+            flex-wrap : wrap;
+        }
+
+        .horizontal_list li{
+            padding : 2px;
+            margin-right : 20px;
+            margin-left : 2px;
+            margin-bottom : 2px;
+            border-radius: 10px;
+        }
+
+        ul{
+            margin-left:0px;
+        }
+
+        #profile_{
+            margin-top : 2vh;
+            height : 15%;
+            width : 100%;
+            text-align: center;
+        }
+
+        #contact_{
+            padding-left : 1.5vh;
+            font-size : 2vh;
+        }
+
+        #content_ ul{
+            margin-top : 0px;
+        }
+
+        nav li,p{
+            font-size : 2vh;
+        }
+
+        nav p{
+            width : 90%;
+            font-size: 2vh;
+            padding-left: 8px;
+            padding-right: 3px;
+            margin : 2px;
+        }
+
+        h5{
+            margin : 1vh;
+        }
+
+        img{
+            height : 95%;
+            width : 85%;
+        }
+
+
+        #heading_1{
+            font-size : 2vh;
+            font-weight : bolder;
+        }
+
+        #heading_2{
+            font-size : 2vh;
+            font-weight : bolder;   
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <nav>
+            <div id="profile_">
+                <img src="profile.png" alt="">
+            </div>
+
+            <h5> CONTACT ME : </h5>
+            <div id="contact_">
+                91-8639753347 <br>
+                vinay25@gmail.com <br>
+                <a href="https://www.linkedin.com/in/vinay-krishna-yelugu-1b5b34259/">Linkedin</a> <br>
+                <a href="https://github.com/VinaykrishnaYelugu/">Github</a>
+            </div>
+            <br>
+
+            <h5> LANGUAGES : </h5>
+            <ul  type="square" style="width:25vw;">
+                <li> English </li>
+                <li> Telugu </li>
+                <li> Hindi </li>
+                <li> Kannada </li>
+            </ul>
+
+
+            <h5> HOBBIES : </h5>
+            <ul  type="square" style="width:20vw;">
+                <li> Painting </li>
+                <li> Reading Books </li>
+                <li> Listening to Music </li>
+            </ul>
+
+            <h5>ADDRESS : </h5>
+
+            <p> SJCE Boys Hostel,</p> 
+            <p>UOM Campus Rd, Manasa Gangothri, </p>
+            <p>Mysuru,</p>
+            <p>570001.</p>
+        </nav>
+        <div id="details">
+            <section id="name_">
+               <h1> VINAY KRISHNA Y </h1>
+               <h6> 
+                ~ Passionate about Computer Science. A Quick learner, Good Problem solver and Tech-enthusiast.
+               </h6>
+            </section>
+
+            <hr color="grey" size="2px">
+
+            <section id="content_"> 
+                <h5> EDUCATION : </h5>
+                <ul type="square">
+                    <li> 
+                       <div class="left_align">
+                           <div> <b>JSS STU</b></div>
+                           <div>-- 2021-present</div>
+                       </div>
+                       <div class="left_align"> 
+                           <div>B.E in CSE </div>
+                           <div><b>CGPA : </b> 8.87 </div>
+                       </div>
+                    </li>
+
+                    <li> 
+                       <div class="left_align">
+                           <div> <b>Sri Chaitanya</b> </div>
+                           <div>-- 2019-2021</div>
+                       </div>
+                       <div class="left_align"> 
+                           <div>Class 12 in MPC </div>
+                           <div> <b>Percentage : </b> 98.10% </div>
+                       </div>
+                    </li>
+               
+                    <li> 
+                       <div class="left_align">
+                           <div> <b>Sri Chaitanya</b> </div>
+                           <div>-- 2018-2019</div>
+                       </div>
+                       <div class="left_align"> 
+                           <div> Class 10 </div>
+                           <div><b>Percentage : </b> 95.00% </div>
+                       </div>
+                    </li>
+               </ul>
+
+               <h5> PROJECTS : </h5>
+               <ul type="square">
+                   <li>
+                       <span id="heading_2"> Music Player - </span> 
+                       <a href="https://vinaykrishnayelugu.github.io/MUSIC_PLAYER/" id="heading_2"> <i class="fa-solid fa-arrow-up-right-from-square"></i> </a> 
+                       &nbsp;  
+                       <a href="https://github.com/VinaykrishnaYelugu/MUSIC_PLAYER" id="heading_2">Source Code</a>
+                       <div> 
+                           A Music player made using Html, CSS, JavaScript 
+                       </div>
+                   </li>
+   
+                   <li>
+                       <span id="heading_2"> Hospital Management System - </span>
+                       <a href="https://github.com/VinaykrishnaYelugu/Hospital-Management-System" id="heading_2">Source Code</a>
+                       <div> 
+                           A hospital management system developed using HTML, CSS, JavaScript, PHP, MySQL
+                       </div>
+                   </li>
+               </ul>
+
+               <h5> SKILLS : </h5>
+               <ul type="square" class="horizontal_list">
+                   <li> <div>C language</div> </li>
+                   <li> <div>Java</div> </li>
+                   <li> <div>HTML</div> </li>
+                   <li> <div>CSS</div> </li>
+                   <li> <div>JavaScript</div> </li>
+                   <li> <div>PHP</div> </li>
+                   <li> <div>MySQL</div> </li>
+               </ul>
+
+               <h5> Extracurricular : </h5>
+               <ul type="square" style="width:90%;">
+                   <li> <div>Won 1st prize in a painting competition held at the town-level. </div> </li>
+                   <li> <div>Participated in “Sanatan Dharm Vignan Exam” organized by Tirumala Tirupati Devasthanam and stood in 3rd place in state level. </div> </li>
+               </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
