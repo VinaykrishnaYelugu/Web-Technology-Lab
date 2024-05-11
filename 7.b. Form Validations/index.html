@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Form Validations </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="action.php">
+        <fieldset>
+            <legend> DETAILS FORM </legend>
+            <input type="text" id="name_" placeholder="Enter your name.."> 
+            <input type="email" id="email_" placeholder="Enter your email..">
+            <input type="text" id="gender_" placeholder="Enter your gender..">
+            <input type="text" id="mobile_" inputmode="numeric" placeholder="Enter your mobile number..">
+            <div style="width : 80%; height : 10%; text-align: center; ">
+                Pick your favourite Color : <input style="border-radius: 3px; width : 15%; height : 70%;" type="color" id="color_" placeholder="Enter your favourite color..">
+            </div>
+            <button type="submit"> SUBMIT DETAILS </button>
+        </fieldset>
+    </form>
+    <br> 
+    <section  id="result">
+           <h2> YOUR ENTERED DETAILS </h2>
+    </section>
+    <script src="app.js"> </script>
+</body>
+</html>

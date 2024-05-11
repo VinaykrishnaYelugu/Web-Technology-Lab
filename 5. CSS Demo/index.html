@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Demo</title>
+    <style>
+      body {
+        background-color: bisque;
+      }
+      a:link {
+        color: red;
+      }
+      a:visited {
+        color: green;
+      }
+      a:hover {
+        color: blue;
+      }
+      a:active {
+        color: yellow;
+      }
+      .visible {
+        visibility: visible;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+      .visible:hover + .hidden {
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is a CSS Demo</h1>
+    <p style="font-family: 'Courier New', monospace">This is Courier New.</p>
+    <p style="font-family: 'Comic Sans MS', cursive">This is Comic Sans MS.</p>
+    <p style="font-family: 'Times New Roman', serif">
+      This is Times New Roman.
+    </p>
+    <div
+      style="
+        background-image: url('css demo.png');
+        width: 80vw;
+        height: 150px;
+        background-repeat: no-repeat;
+        background-position: center;
+      "
+    ></div>
+    <div
+      style="
+        background-image: url('css demo.png');
+        width: 80vw;
+        height: 150px;
+        background-repeat: repeat;
+        background-position: center;
+      "
+    ></div>
+    <br />
+    <div style="display: flex; flex-direction: column">
+      <a href="https://www.google.com">Google</a>
+      <a href="https://www.facebook.com">Facebook</a>
+      <a href="https://www.twitter.com">Twitter</a>
+    </div>
+    <br />
+    <div class="visible">Hover me to see the hidden content</div>
+    <div class="hidden">Hehe I am the hidden content</div>
+  </body>
+</html>
