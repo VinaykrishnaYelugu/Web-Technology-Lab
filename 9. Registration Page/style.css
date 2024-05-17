@@ -1,0 +1,46 @@
+body{
+    background-image: linear-gradient(90deg, purple, darkblue);
+}
+
+form{
+    height : 80vh;
+    width : 60vw;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    margin : auto;
+    margin-top : 9.5vh;
+}
+
+fieldset{
+    height : 80%;
+    width : 80%;
+    display : flex;
+    flex-direction : column;
+    justify-content : space-evenly;
+    align-items : center;
+    border-radius : 7px;
+    background-color: aliceblue;
+    font-weight : bolder;
+    border : none;
+}
+
+input {
+    height : 10%;
+    width : 65%;
+    border-radius : 10px;
+}
+
+button {
+    height : 10%;
+    width : 30%;
+    border-radius : 20px;
+}
+
+legend{
+    text-align: center;
+    border-radius : 15px;
+    border : 1px solid black;
+    padding : 5px;
+    background-color: rgb(240, 234, 234);
+}
