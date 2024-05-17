@@ -30,14 +30,20 @@ function checkInvalidFields() {
     let valid = true;
 
     for( let i=0 ; i<ips.length ; i++ ) {
-          if( ips[i].value=="**This field is important" || ips[i].value=="Invalid" )
+          if( ips[i].value=="**This field is important" || ips[i].value=="Invalid" ) {
+              ipbits[i] = false;
+              valid = false;
               continue;
+          }
+
           if( i==0 ) {
              if( ( ips[i].value.length<5 || ips[i].value.length>12 ) ) {
                 setInvalid( ips[i] , "Invalid" );
                 ipbits[i] = false;
                 valid = false;
              }
+             else
+                ipbits[i] = true;
           }
           else if( i==1 ) {
              if( ips[i].value.length>15 || ips[i].value.search(/[^a-zA-Z]/)!=-1 ) {
@@ -45,6 +51,8 @@ function checkInvalidFields() {
                 ipbits[i] = false;
                 valid = false;
              }
+             else
+                ipbits[i] = true;
           }
           else if( i==2 ) {
              let password = ips[i].value;
@@ -53,6 +61,8 @@ function checkInvalidFields() {
                 ipbits[i] = false;
                 valid = false;
              }
+             else
+                ipbits[i] = true;
           }
           else if( i==3 ) {
             let x = ips[i].value.match(/[a-z0-9\.]+[@]+[a-z]+[\.]+[a-z]+/g);
@@ -61,36 +71,32 @@ function checkInvalidFields() {
                 ipbits[i] = false;
                 valid = false;
             }
+            else
+                ipbits[i] = true;
           }
     }
-
     return valid;
 }
 
 function checkEmptyFields() {
     let valid = true;
     for( let i=0 ; i<ips.length ; i++ ) {
-        if( ips[i].value=="" || ips[i].value=="**This field is important" ) {
-            if( i==2 ) {
-                setInvalid( ips[i] , "" );
-            }
+        if( ips[i].value=="**This field is important" || ips[i].value=="Invalid" ) {
+            ipbits[i] = false;
+            valid = false;
+            continue;
+        }
+    
+        if( ips[i].value=="" ) {
+            if( i==2 )
+               setInvalid( ips[i] , "" );
             else
-                setInvalid( ips[i] , "**This field is important" );
+               setInvalid( ips[i] , "**This field is important" );
             ipbits[i] = false;
             valid = false;
         }
-        else if( ips[i].value=="Invalid" ) {
-            if( i==2 ) {
-                setInvalid( ips[i] , "" );
-            }
-            else
-                setInvalid( ips[i] , "Invalid" );
-            ipbits[i] = false;
-            valid = false;
-        }
-        else{
+        else
             ipbits[i] = true;
-        }
     }
     return valid;
 } 
