@@ -1,10 +1,4 @@
-let regno = document.querySelector("#reg_no_");
-let subcode = document.querySelector("#sub_code_");
-let m1 = document.querySelector("#m1_");
-let m2 = document.querySelector("#m2_");
-let m3 = document.querySelector("#m3_");
 let btn = document.querySelector("#btn_");
-
 let ips = document.querySelectorAll("input");
 let ipbits = [ true , true , true , true , true ];
 
@@ -43,18 +37,14 @@ for( let i=2 ; i<ips.length ; i++ ) {
 function checkEmptyFields() {
     let valid = true;
     for( let i=0 ; i<ips.length ; i++ ) {
-        if( ips[i].value=="" || ips[i].value=="**This field is important" ) {
+        if( ips[i].value=="Invalid" ||  ips[i].value=="**This field is important" ) {
+            ipbits[i] = false;
+            valid = false;
+            continue;
+        }
+
+        if( ips[i].value=="" ) {
             setInvalid( ips[i] , "**This field is important" );
-            ipbits[i] = false;
-            valid = false;
-        }
-        else if( ips[i].value=="Invalid Reg.No" ) {
-            setInvalid( ips[i] , "Invalid Reg.No" );
-            ipbits[i] = false;
-            valid = false;
-        }
-        else if( ips[i].value=="Invalid marks entered"){
-            setInvalid( ips[i] , "Invalid marks entered" );
             ipbits[i] = false;
             valid = false;
         }
@@ -67,35 +57,31 @@ function checkEmptyFields() {
 
 function checkInvalidFields() {
      let valid = true;
-
-     if( !regno.value.includes("JST")  && regno.value!="Invalid Reg.No" && regno.value!="**This field is important") {
-        console.log("I am Triggered");
-        setInvalid( regno , "Invalid Reg.No");
-        ipbits[0] = false;
-        valid = false;
-     }
-     else if( regno.value=="Invalid Reg.No" ) {
-        setInvalid( regno , "Invalid Reg.No");
-        ipbits[0] = false;
-        valid = false;
-     }
-     else if( regno.value=="**This field is important" ) {
-        setInvalid( regno , "**This field is important");
-        ipbits[0] = false;
-        valid = false;
-     }
-     else{
-        ipbits[0] = true;
-        setNormal( regno );
-     }
-
-     for( let i=2 ; i<ips.length ; i++ ) {
-        let marks = Number( ips[i].value );
-        if( marks<0 || marks>20 ) {
-            setInvalid( ips[i] , "Invalid marks entered" );
+     for( let i=0 ; i<ips.length ; i++ ) {
+        if( ips[i].value=="Invalid" ||  ips[i].value=="**This field is important" ) {
             ipbits[i] = false;
             valid = false;
             continue;
+        }
+    
+        if( i==0 ) {
+            if( !ips[i].value.includes("JST")  ) {
+                setInvalid( ips[i] , "Invalid");
+                ipbits[i] = false;
+                valid = false;
+            }
+            else
+                ipbits[i] = true;
+        } 
+        if( i>=2 ) {
+            let marks = Number( ips[i].value );
+            if( marks<0 || marks>20 ) {
+                setInvalid( ips[i] , "Invalid" );
+                ipbits[i] = false;
+                valid = false;
+            }
+            else 
+                ipbits[i] = true;
         }
      }
 
@@ -107,7 +93,8 @@ btn.addEventListener( "click" , (event)=>{
     event.preventDefault();
     let check1 = checkEmptyFields();
     let check2 = checkInvalidFields();
+    console.log( check1 + " | " + check2 );
     if( check1 &&  check2 ) {
-       alert(`STUDENT REG.NO : ${regno.value}\nSUBJECT CODE : ${subcode.value}\nCURRENT CIE : ${(Number(m1.value)+Number(m2.value)+Number(m3.value))/2}`);
+       alert(`STUDENT REG.NO : ${ips[0].value}\nSUBJECT CODE : ${ips[1].value}\nCURRENT CIE : ${ (Number(ips[2].value)+Number(ips[3].value)+Number(ips[4].value))/2}`);
     }
 });
